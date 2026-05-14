@@ -1,0 +1,5 @@
+.imagem-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantém a proporção dos seus cards sem cortar nada */
+}

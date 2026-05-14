@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trilha de Conhecimento Digital - Tecnologia para Todos</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .slide {
+            background: #ffffff;
+            color: #1e293b;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .slide p {
+            font-size: 1.08em;
+            color: #475569;
+        }
+
+        .capa {
+            text-align: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+        }
+
+        .capa h1 {
+            color: #2dd4bf;
+            font-size: 3em;
+            margin: 0.2em 0;
+            line-height: 1.2;
+        }
+
+        .capa p { color: #cbd5e1; }
+
+        .autor {
+            font-size: 1.3em;
+            margin-top: 60px;
+            color: #94a3b8;
+        }
+
+        h2 {
+            color: #0d9488;
+            font-size: 2em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: #0f172a;
+            font-size: 1.45em;
+            margin: 0 0 14px 0;
+        }
+
+        .badge {
+            background: #2dd4bf;
+            color: #0f172a;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .badge.capa-badge {
+            background: #0d9488;
+            color: white;
+            align-self: center;
+        }
+
+        ul.topics {
+            padding-left: 20px;
+            margin-top: 14px;
+        }
+
+        ul.topics li {
+            margin-bottom: 13px;
+            font-size: 1.05em;
+            color: #475569;
+        }
+
+        .sumario ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sumario li {
+            background: #f1f5f9;
+            margin: 12px 0;
+            padding: 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            border-left: 6px solid #0d9488;
+            color: #334155;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: start; /* Alinha o texto ao topo da imagem */
+            margin-top: 20px;
+        }
+
+        .imagem-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            min-height: 420px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .imagem-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+
+        .texto-modulo {
+            align-self: start;
+            margin-top: 0;
+            padding-top: 0;
+            max-width: 430px;
+        }
+
+        .texto-modulo p {
+            margin-top: 0;
+            margin-bottom: 14px;
+            font-size: 1.04em;
+            color: #475569;
+            line-height: 1.65;
+        }
+
+        .texto-modulo ul {
+            margin-top: 10px;
+        }
+
+        .nota {
+            background: #ecfeff;
+            color: #155e75;
+            padding: 18px 22px;
+            border-left: 6px solid #0d9488;
+            border-radius: 10px;
+            margin-top: 25px;
+            font-weight: 500;
+        }
+
+        .cuidados-lista li {
+            background: #f8fafc;
+            padding: 14px 18px;
+            border-radius: 10px;
+            border-left: 5px solid #14b8a6;
+            list-style-position: inside;
+        }
+
+        .contato-final { text-align: center; }
+
+        .contato-box {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 50px;
+        }
+
+        .autoria {
+            background: #f0fdfa;
+            border: 1px solid #99f6e4;
+            color: #134e4a;
+            padding: 18px;
+            border-radius: 12px;
+            margin-top: 25px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            body { padding: 10px; }
+            .slide {
+                padding: 28px;
+                margin: 24px auto;
+                min-height: auto;
+            }
+            .capa h1 { font-size: 2.1em; }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            .imagem-box { min-height: auto; }
+            .texto-modulo { max-width: 100%; }
+            h2 { font-size: 1.6em; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide capa">
+        <span class="badge capa-badge">Projeto de Extensão UniCV</span>
+        <h1>Trilha de Conhecimento Digital:<br>Tecnologia para Todos</h1>
+        <p style="font-size: 1.4em;">Uma ação de inclusão digital para uso seguro e consciente da tecnologia</p>
+        <div class="autor">
+            <strong>Elaborado por:</strong><br>
+            Renato Lázaro Santos Batista
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Objetivo da Ação</h2>
+        <p>
+            Esta trilha foi desenvolvida para auxiliar moradores da comunidade no uso mais seguro,
+            consciente e autônomo da tecnologia no dia a dia.
+        </p>
+        <ul class="topics">
+            <li>Orientar sobre segurança digital e prevenção contra golpes.</li>
+            <li>Estimular o uso de ferramentas digitais acessíveis.</li>
+            <li>Promover autonomia no uso do celular, internet e aplicativos.</li>
+            <li>Apresentar caminhos para continuidade do aprendizado tecnológico.</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <h2>Como Utilizar Este Material</h2>
+        <p>
+            Os módulos foram organizados de forma progressiva. O participante pode acompanhar pelo celular,
+            lendo os guias no próprio WhatsApp ou acessando o material complementar pelo link disponibilizado.
+        </p>
+        <ul class="topics">
+            <li>Leia cada módulo com calma.</li>
+            <li>Pratique as dicas no seu próprio celular.</li>
+            <li>Envie dúvidas no grupo, caso precise de ajuda.</li>
+            <li>Acesse o Módulo 4 apenas se desejar continuar aprendendo.</li>
+        </ul>
+        <div class="nota">
+            O WhatsApp foi escolhido como canal principal por ser uma ferramenta familiar e acessível aos participantes.
+        </div>
+    </div>
+
+    <div class="slide sumario">
+        <h2>Sumário da Trilha</h2>
+        <p>
+            A trilha foi organizada em módulos progressivos, partindo de conteúdos básicos de segurança
+            e uso do celular até orientações complementares para continuidade dos estudos.
+        </p>
+        <ul>
+            <li>Módulo 1: Inclusão Digital Essencial — Segurança e uso diário</li>
+            <li>Módulo 2: Seus Dados Protegidos — Senhas, organização e nuvem</li>
+            <li>Módulo 3: Produtividade e Colaboração Online — Ferramentas de trabalho e estudo</li>
+            <li>Módulo 4: Além do Básico — Conteúdo complementar e opcional</li>
+        </ul>
+    </div>
+
+    <div class="slide">
+        <span class="badge">Módulo 1</span>
+        <h2>Inclusão Digital Essencial</h2>
+        <div class="grid">
+            <div class="imagem-box">
+                <img src="img/guia1.png" alt="Guia sobre uso seguro do aplicativo do banco">
+            </div>
+            <div class="texto-modulo">
+                <h3>O essencial para o dia a dia</h3>
+                <p>
+                    Este módulo apresenta cuidados básicos para o uso seguro do celular,
+                    principalmente em aplicativos bancários e no WhatsApp.
+                </p>
+                <p>
+                    O objetivo é ajudar o participante a reconhecer riscos comuns, evitar golpes
+                    e utilizar recursos simples de proteção no cotidiano.
+                </p>
+                <ul class="topics">
+                    <li>Uso seguro de aplicativos bancários.</li>
+                    <li>Prevenção contra golpes e clonagem no WhatsApp.</li>
+                    <li>Configuração de biometria, senhas e bloqueios de tela.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <span class="badge">Módulo 2</span>
+        <h2>Seus Dados Protegidos</h2>
+        <div class="grid">
+            <div class="imagem-box">
+                <img src="img/2.png" alt="Guia sobre uso seguro do Google Drive">
+            </div>
+            <div class="texto-modulo">
+                <h3>Segurança e organização na nuvem</h3>
+                <p>
+                    Neste módulo, o participante aprende formas simples de proteger suas contas,
+                    criar senhas mais seguras e organizar documentos importantes.
+                </p>
+                <p>
+                    O conteúdo também apresenta o Google Drive como ferramenta de armazenamento
+                    em nuvem, com orientações sobre backup e compartilhamento seguro.
+                </p>
+                <ul class="topics">
+                    <li>Criação de senhas fortes e diferentes.</li>
+                    <li>Google Drive: armazenar, organizar e acessar arquivos.</li>
+                    <li>Compartilhamento seguro de pastas e links.</li>
+                    <li>Backup para evitar perda de dados importantes.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <span class="badge">Módulo 3</span>
+        <h2>Produtividade e Colaboração Online</h2>
+        <div class="grid">
+            <div class="imagem-box">
+                <img src="img/M3guia1.png" alt="Guia sobre Microsoft Teams para iniciantes">
+            </div>
+            <div class="texto-modulo">
+                <h3>Comunicação para estudo e trabalho</h3>
+                <p>
+                    Este módulo apresenta o Microsoft Teams de forma prática, mostrando como
+                    acessar reuniões online e utilizar recursos básicos da plataforma.
+                </p>
+                <p>
+                    A proposta é facilitar a participação em reuniões, aulas, entrevistas e
+                    atendimentos virtuais com mais autonomia e segurança.
+                </p>
+                <ul class="topics">
+                    <li>Microsoft Teams para iniciantes.</li>
+                    <li>Entrada em reuniões por link.</li>
+                    <li>Controle de áudio, vídeo e chat.</li>
+                    <li>Boas práticas de participação em reuniões online.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="slide">
+        <span class="badge">Módulo 4 — Opcional</span>
+        <h2>Além do Básico</h2>
+        <div class="grid">
+            <div class="imagem-box">
+                <img src="img/guiaprogra.png" alt="Guia sobre como começar a estudar tecnologia">
+            </div>
+            <div class="texto-modulo">
+                <h3>Continue aprendendo tecnologia</h3>
+                <p>
+                    Este módulo é complementar e foi pensado para os participantes que desejam
+                    continuar aprendendo após os conteúdos principais da trilha.
+                </p>
+                <p>
+                    O foco é apresentar caminhos simples para organizar os estudos, praticar
+                    tecnologia e conhecer os primeiros conceitos de programação.
+                </p>
+                <ul class="topics">
+                    <li>Dicas para organizar uma rotina simples de estudos.</li>
+                    <li>Introdução à lógica de programação.</li>
+                    <li>Primeiros passos com Python.</li>
+                    <li>Caminhos para continuar aprendendo tecnologia.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nota">
+            Este módulo é complementar e pode ser acessado conforme o interesse de cada participante.
+        </div>
+    </div>
+
+    <div class="slide">
+        <h2>Cuidados Importantes</h2>
+        <p>Algumas recomendações essenciais para usar a tecnologia com mais segurança:</p>
+        <ul class="topics cuidados-lista">
+            <li>Nunca compartilhe senhas, códigos de verificação ou dados bancários.</li>
+            <li>Desconfie de links recebidos por mensagens, mesmo quando parecem confiáveis.</li>
+            <li>Confira sempre o destinatário antes de fazer PIX ou transferências.</li>
+            <li>Use senhas diferentes para contas importantes.</li>
+            <li>Ative a verificação em duas etapas sempre que possível.</li>
+            <li>Mantenha cópias dos documentos importantes em local seguro.</li>
+        </ul>
+    </div>
+
+    <div class="slide contato-final">
+        <h2>Conclusão e Contato</h2>
+        <p>
+            Este material foi desenvolvido como parte integrante da execução do projeto de extensão da UniCV.
+            A proposta buscou contribuir para o desenvolvimento da cidadania digital por meio de orientações
+            práticas, acessíveis e aplicáveis ao cotidiano dos participantes.
+        </p>
+
+        <div class="autoria">
+            Todos os materiais visuais, textos e orientações foram elaborados de forma autoral para esta ação extensionista,
+            com base nas necessidades identificadas na etapa de planejamento.
+        </div>
+
+        <div class="contato-box">
+            <h3>Renato Lázaro Santos Batista</h3>
+            <p><strong>Engenharia de Dados | Desenvolvedor Frontend</strong></p>
+            <p>E-mail: nato_rj@yahoo.com.br</p>
+        </div>
+
+        <p style="margin-top: 40px; font-style: italic; color: #94a3b8;">
+            UniCV - Centro Universitário Cidade Verde | 2026
+        </p>
+    </div>
+
+</body>
+</html>
